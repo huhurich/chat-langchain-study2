@@ -1,8 +1,5 @@
 # chat-langchain-study
 
-❗❗❗从0开始运行这个项目，语雀版本（和本文内容一模一样，看一个就行）❗❗❗：[chat-langchain项目启动攻略](https://www.yuque.com/goodnote/llm-dev/zwwg6hu8b5chwl1u)
-
-
 本文详细介绍如何运行一个入门级项目，即 langchain 官方项目 chat-langchain 项目启动和运行时候的一些细节。欢迎阅读，如果对你有用，麻烦点一下 🌟 star，谢谢！
 
 
