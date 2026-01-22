@@ -26,7 +26,7 @@
 >
 > 日期：2025-06-23 09:53:42
 >
-> 录制文件：[https://meeting.tencent.com/crm/NoqewwVa21](https://meeting.tencent.com/crm/NoqewwVa21)
+> 录制文件：https://www.bilibili.com/video/BV1XCkWBbE41/
 >
 
 # 准备工作（申请API）
@@ -48,7 +48,7 @@ API平台（先注册，再申请）：
 >
 > 日期：2025-06-23 09:53:42
 >
-> 录制文件：[https://meeting.tencent.com/crm/NgYd99zgc8](https://meeting.tencent.com/crm/NgYd99zgc8)
+> 录制文件：https://www.bilibili.com/video/BV1dqkWBYEVn/
 >
 
 # chat-langchain_项目运行成功
@@ -58,7 +58,7 @@ API平台（先注册，再申请）：
 >
 > 日期：2025-06-23 09:53:42
 >
-> 录制文件：[https://meeting.tencent.com/crm/2rE5PyzXa1](https://meeting.tencent.com/crm/2rE5PyzXa1)
+> 录制文件：https://www.bilibili.com/video/BV1oikWBPEcP
 >
 
 ## 直接运行更改后的代码
