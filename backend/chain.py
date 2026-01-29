@@ -236,7 +236,13 @@ def create_chain(llm: LanguageModelLike, retriever: BaseRetriever) -> Runnable:
     )
 
 
-gpt_3_5 = ChatOpenAI(model="gpt-3.5-turbo-0125", temperature=0, streaming=True)
+gpt_3_5 = ChatOpenAI(
+    model="Qwen/Qwen2.5-7B-Instruct",
+    temperature=0,
+    streaming=True,
+    openai_api_base=os.environ.get("OPENAI_API_BASE", "https://api.siliconflow.cn/v1"),
+    openai_api_key=os.environ.get("OPENAI_API_KEY")
+)
 claude_3_haiku = ChatAnthropic(
     model="claude-3-haiku-20240307",
     temperature=0,

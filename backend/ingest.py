@@ -20,7 +20,12 @@ logger = logging.getLogger(__name__)
 
 
 def get_embeddings_model() -> Embeddings:
-    return OpenAIEmbeddings(model="text-embedding-3-small", chunk_size=200)
+    return OpenAIEmbeddings(
+        model="BAAI/bge-large-zh-v1.5",
+        chunk_size=200,
+        openai_api_base=os.environ.get("OPENAI_API_BASE", "https://api.siliconflow.cn/v1"),
+        openai_api_key=os.environ.get("OPENAI_API_KEY")
+    )
 
 
 def metadata_extractor(meta: dict, soup: BeautifulSoup) -> dict:
