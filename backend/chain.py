@@ -1,4 +1,6 @@
 import os
+import time
+from functools import wraps
 from operator import itemgetter
 from typing import Dict, List, Optional, Sequence
 
@@ -126,10 +128,30 @@ class ChatRequest(BaseModel):
     chat_history: Optional[List[Dict[str, str]]]
 
 
+def retry_on_failure(max_retries=3, delay=2):
+    """重试装饰器，用于处理 Weaviate 连接失败"""
+    def decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            for attempt in range(max_retries):
+                try:
+                    return func(*args, **kwargs)
+                except Exception as e:
+                    if attempt == max_retries - 1:
+                        raise
+                    print(f"Weaviate connection attempt {attempt + 1} failed: {str(e)}. Retrying in {delay} seconds...")
+                    time.sleep(delay)
+            return None
+        return wrapper
+    return decorator
+
+
+@retry_on_failure(max_retries=3, delay=5)
 def get_retriever() -> BaseRetriever:
     weaviate_client = weaviate.Client(
         url=WEAVIATE_URL,
         auth_client_secret=weaviate.AuthApiKey(api_key=WEAVIATE_API_KEY),
+        timeout_config=(10, 60),  # (connect timeout, read timeout)
     )
     weaviate_client = Weaviate(
         client=weaviate_client,
